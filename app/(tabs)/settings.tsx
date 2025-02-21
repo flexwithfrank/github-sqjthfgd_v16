@@ -1,4 +1,10 @@
-import { View, Text, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  ScrollView,
+  TouchableOpacity,
+} from 'react-native';
 import { useState } from 'react';
 import { Ionicons } from '@expo/vector-icons';
 import { router } from 'expo-router';
@@ -18,14 +24,20 @@ export default function SettingsScreen() {
     <ScrollView style={styles.container}>
       <View style={styles.section}>
         <Text style={styles.sectionTitle}>Account</Text>
-        <TouchableOpacity onPress={() => router.push('/profile')} style={styles.item}>
+        <TouchableOpacity
+          onPress={() => router.push('/profile')}
+          style={styles.item}
+        >
           <View style={styles.itemContent}>
             <Ionicons name="person-outline" size={24} color="#ffffff" />
             <Text style={styles.itemText}>Edit Profile</Text>
           </View>
           <Ionicons name="chevron-forward" size={24} color="#ffffff" />
         </TouchableOpacity>
-        <TouchableOpacity style={styles.item}>
+        <TouchableOpacity
+          onPress={() => router.push('/notifications')}
+          style={styles.item}
+        >
           <View style={styles.itemContent}>
             <Ionicons name="notifications-outline" size={24} color="#ffffff" />
             <Text style={styles.itemText}>Notifications</Text>
@@ -61,7 +73,7 @@ export default function SettingsScreen() {
 
       <View style={styles.section}>
         <Text style={styles.sectionTitle}>Support</Text>
-        <TouchableOpacity 
+        <TouchableOpacity
           style={styles.item}
           onPress={() => router.push('/about')}
         >
@@ -71,7 +83,7 @@ export default function SettingsScreen() {
           </View>
           <Ionicons name="chevron-forward" size={24} color="#666666" />
         </TouchableOpacity>
-        <TouchableOpacity 
+        <TouchableOpacity
           style={styles.item}
           onPress={() => router.push('/help')}
         >
@@ -81,7 +93,7 @@ export default function SettingsScreen() {
           </View>
           <Ionicons name="chevron-forward" size={24} color="#666666" />
         </TouchableOpacity>
-        <TouchableOpacity 
+        <TouchableOpacity
           style={styles.item}
           onPress={() => setShowTerms(true)}
         >
@@ -91,7 +103,7 @@ export default function SettingsScreen() {
           </View>
           <Ionicons name="chevron-forward" size={24} color="#666666" />
         </TouchableOpacity>
-        <TouchableOpacity 
+        <TouchableOpacity
           style={styles.item}
           onPress={() => setShowPrivacy(true)}
         >
@@ -103,8 +115,8 @@ export default function SettingsScreen() {
         </TouchableOpacity>
       </View>
 
-      <TouchableOpacity 
-        style={[styles.item, styles.signOutButton]} 
+      <TouchableOpacity
+        style={[styles.item, styles.signOutButton]}
         onPress={handleSignOut}
       >
         <View style={styles.itemContent}>

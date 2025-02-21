@@ -29,6 +29,14 @@ export function HeaderSheet({ visible, onClose }: HeaderSheetProps) {
 
   const menuItems = [
     {
+      icon: 'bell-outline',
+      label: 'Notifications',
+      onPress: () => {
+        router.push('/notifications');
+        onClose();
+      },
+    },
+    {
       icon: 'account',
       label: 'Profile',
       onPress: () => {
@@ -46,9 +54,9 @@ export function HeaderSheet({ visible, onClose }: HeaderSheetProps) {
     },
     {
       icon: 'trophy-outline',
-      label: 'Leaderboard',
+      label: 'Challenge',
       onPress: () => {
-        router.push('/(tabs)/leaderboard');
+        router.push('/(tabs)/challenge');
         onClose();
       },
     },
